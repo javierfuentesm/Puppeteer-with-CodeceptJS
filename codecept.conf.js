@@ -27,7 +27,10 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
-    allure: {}
+    allure: {},
+    stepByStepReport: {
+      "enabled": true
+    }
 
   }
 }
