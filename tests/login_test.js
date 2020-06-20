@@ -1,0 +1,18 @@
+const allure = codeceptjs.container.plugins('allure');
+
+
+Feature('login');
+
+Scenario('test something', async(I) => {
+    I.amOnPage('index.html');
+    I.click('#signin_button');
+    I.fillField('#user_login', 'username');
+    I.fillField('#user_password', 'password');
+    I.click('.btn-primary');
+    const screenshot = await I.saveScreenshot('Screenshot.png');
+    console.log(screenshot)
+    allure.addAttachment("Screenshot", screenshot, "image/png");
+
+
+
+});

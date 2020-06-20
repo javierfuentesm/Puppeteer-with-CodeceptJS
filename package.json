@@ -1,0 +1,17 @@
+{
+  "name": "PPTR-Codeceptjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run --plugins allure",
+    "reports": "allure serve evidence"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^2.6.6",
+    "puppeteer": "^4.0.0"
+  }
+}
