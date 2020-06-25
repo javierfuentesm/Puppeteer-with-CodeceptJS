@@ -1,11 +1,4 @@
-const { setHeadlessWhen } = require('@codeceptjs/configure');
-
-// turn on headless mode when running with HEADLESS=true environment variable
-// HEADLESS=true npx codecept run
-setHeadlessWhen(process.env.HEADLESS);
-
 exports.config = {
-  tests: 'tests/*_test.js',
   output: 'evidence',
   helpers: {
     Puppeteer: {
@@ -17,20 +10,26 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
-  bootstrap: null,
   mocha: {},
-  name: 'PPTR-Codeceptjs',
+  bootstrap: null,
+  teardown: null,
+  hooks: [],
+  gherkin: {
+    features: './features/*.feature',
+    steps: ['./step_definitions/steps.js']
+  },
   plugins: {
-    retryFailedStep: {
+    screenshotOnFail: {
       enabled: true
     },
-    screenshotOnFail: {
+    retryFailedStep: {
       enabled: true
     },
     allure: {},
     stepByStepReport: {
-      "enabled": true
+      enabled: true
     }
-
-  }
+  },
+  tests: 'tests/*_test.js',
+  name: 'PPTR-Codeceptjs'
 }
