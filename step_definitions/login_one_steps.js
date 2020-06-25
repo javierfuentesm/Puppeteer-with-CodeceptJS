@@ -11,7 +11,6 @@ Given(/^Im on the right page$/, async () => {
   I.amOnPage("index.html");
 });
 
-Given(/^I login$/, function () {});
 Given(/^I login with my (.*)\$ and (.*)\$$/, function (user, password) {
   loginPage.login(user, password);
 });
