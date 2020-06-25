@@ -9,3 +9,7 @@ Feature: Login with Page Object Model
     Examples:
       | user | password |
       | username    | password    |
+      | 20    | 20    |
+      | 21    | 18.9  |
+      | 30    | 27    |
+      | 50    | 45    |
