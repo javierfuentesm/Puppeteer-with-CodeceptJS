@@ -1,5 +1,4 @@
 const { I } = inject();
-const allure = codeceptjs.container.plugins("allure");
 
 Given(/^Im on the right page$/, async () => {
   I.amOnPage("index.html");
