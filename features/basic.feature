@@ -1,4 +1,4 @@
-Feature: Login
+Feature: Login with steps
   In order to enter the page
   As a persona
   I want to be login into the system

@@ -1,35 +1,39 @@
 exports.config = {
-  output: 'evidence',
+  output: "evidence",
   helpers: {
     Puppeteer: {
-      url: 'http://zero.webappsecurity.com/',
+      url: "http://zero.webappsecurity.com/",
       show: true,
-      windowSize: '1200x900'
-    }
+      windowSize: "1200x900",
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: "./steps_file.js",
+    loginPage: "./pages/loginPage.js",
   },
   mocha: {},
   bootstrap: null,
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/steps.js']
+    features: "./features/*.feature",
+    steps: [
+      "./step_definitions/login_steps.js",
+      "./step_definitions/login_one_steps.js",
+    ],
   },
   plugins: {
     screenshotOnFail: {
-      enabled: true
+      enabled: true,
     },
     retryFailedStep: {
-      enabled: true
+      enabled: true,
     },
     allure: {},
     stepByStepReport: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
-  tests: 'tests/*_test.js',
-  name: 'PPTR-Codeceptjs'
-}
+  tests: "tests/*_test.js",
+  name: "PPTR-Codeceptjs",
+};
