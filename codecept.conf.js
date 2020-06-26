@@ -3,8 +3,22 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: "http://zero.webappsecurity.com/",
+      // browser: "firefox",
       show: true,
       windowSize: "1200x900",
+      chrome: {
+        headless: true,
+        args: ["--ignore-certificate-errors"],
+      },
+      firefox: {
+        headless: true,
+        ignoreHTTPSErrors: true,
+        args: [
+          "--no-sandbox",
+          "--disable-dev-shm-usage",
+          "--enable-features=NetworkService",
+        ],
+      },
     },
   },
   include: {
@@ -36,4 +50,21 @@ exports.config = {
   },
   tests: "tests/*_test.js",
   name: "PPTR-Codeceptjs",
+  multiple: {
+    basic: {
+      // run all tests in chrome and firefox
+      browsers: ["chrome", "firefox"],
+    },
+    parallel: {
+      chunks: 30,
+      browsers: [
+        {
+          browser: "chrome",
+        },
+        {
+          browser: "firefox",
+        },
+      ],
+    },
+  },
 };

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx codeceptjs run --features --plugins allure && exit 0",
+    "test": "npx codeceptjs run --features --plugins allure",
+    "test-multiple basic": "npx codeceptjs run-multiple basic --features --plugins allure",
+    "test-multiple parallel": "npx codeceptjs run-multiple parallel --features --plugins allure",
     "reports": "allure serve evidence"
   },
   "keywords": [],
@@ -12,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^2.6.6",
-    "puppeteer": "^4.0.0"
+    "puppeteer": "^4.0.1"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
